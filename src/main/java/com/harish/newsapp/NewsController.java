@@ -24,7 +24,7 @@ public class NewsController {
 	@RequestMapping("newsapp")
 	ModelAndView home(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView("view");
-		mv.addObject("articles",ns.returnNewsObjects("sports"));
+		mv.addObject("articles",ns.returnNewsObjects("general"));
 		req.setAttribute("category", "Top-Headlines");
 		return mv;
 	}
