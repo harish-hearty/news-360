@@ -21,7 +21,7 @@ public class NewsController {
 	@Autowired
 	NewsRepo nr;
 	
-	@RequestMapping("newsapp")
+	@RequestMapping("/")
 	ModelAndView home(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView("view");
 		mv.addObject("articles",ns.returnNewsObjects("general"));
