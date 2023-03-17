@@ -29,7 +29,7 @@ public class NewsRepo {
 		dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
 		okhttp3.Request request = new okhttp3.Request.Builder()
-				.url("https://newsapi.org/v2/everything?q="+key+"&from="+dateFormat.format(date)+"&apiKey="+APIkey)
+				.url("https://newsapi.org/v2/everything?q="+key+"&from="+dateFormat.format(date)+"&sortBy=publishedAt&apiKey="+APIkey)
 				.build();
 
         try {
