@@ -25,7 +25,7 @@ public class NewsController {
 	ModelAndView home(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView("view");
 		mv.addObject("articles",ns.returnNewsObjects("general"));
-		req.setAttribute("category", "Top-Headlines");
+		req.setAttribute("category", "TOP-HEADLINES");
 		return mv;
 	}
 	

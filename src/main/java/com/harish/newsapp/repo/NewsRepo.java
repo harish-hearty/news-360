@@ -19,6 +19,8 @@ public class NewsRepo {
 	private String APIkey = "348ffba424574302879125452b7cdfd4";
 	
 	private Date date;
+	private Date yesterday;
+	private Date today;
 	private SimpleDateFormat dateFormat;
 	
 	
@@ -26,10 +28,12 @@ public class NewsRepo {
 		
 		client = new OkHttpClient();
 		date = new Date();
+		today = new Date();
+		yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);
 		dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
 		okhttp3.Request request = new okhttp3.Request.Builder()
-				.url("https://newsapi.org/v2/everything?q="+key+"&from="+dateFormat.format(date)+"&apiKey="+APIkey)
+				.url("https://newsapi.org/v2/everything?q="+key+"&from="+dateFormat.format(yesterday)+"&to="+dateFormat.format(today)+"&sortBy=popularity"+"&apiKey="+APIkey)
 				.build();
 
         try {
